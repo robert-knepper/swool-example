@@ -1,11 +1,12 @@
 <?php
-namespace Lackammer\Test;
-require_once "../vendor/autoload.php";
 
-$http = new \Swoole\Http\Server("0.0.0.0", 9501);
+namespace Lackammer\Test\SimpleHttpServer;
+require_once "../Base/Init.php";
+
+$http = new \Swoole\Http\Server(HOST, PORT);
 
 $http->on("start", function ($server) {
-    echo "Swoole HTTP server is started at http://127.0.0.1:9501\n";
+    echo serverStartMessageText("http");
 });
 
 $http->on("request", function ($request, $response) {
