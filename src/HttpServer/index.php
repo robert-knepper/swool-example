@@ -1,6 +1,5 @@
 <?php
-
-namespace Lackammer\Test\SimpleHttpServer;
+namespace Lackammer\Test\HttpServer;
 require_once "../Base/Init.php";
 
 $http = new \Swoole\Http\Server(HOST, PORT);
