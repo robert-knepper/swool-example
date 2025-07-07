@@ -3,7 +3,10 @@ namespace Lackammer\Test\Tcp;
 require_once "../Base/Init.php";
 
 $server = new \Swoole\Server(HOST, PORT);
-
+$server->set([
+    'open_eof_split' => true,   // Enable EOF_SPLIT check
+    'package_eof'    => "\r\n", // Set EOF
+]);
 $server->on("start", function ($server) {
     echo serverStartMessageText("tcp");
 });

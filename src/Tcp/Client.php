@@ -25,7 +25,7 @@ while (true) {
             echo "recv() error: {$client->errCode}\n";
         }
         sleep(1);
-        $client->send("Ping from clientclientclientclientclientclientclientclientclientclientclientclientclientclientclientclientclientclient\n");
+        $client->send("Ping from client\n");
         continue;
     }
 
