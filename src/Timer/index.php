@@ -31,6 +31,7 @@ function addTimer()
     $timeoutTimers[] = \Swoole\Timer::after(2000, function () {
         echo "after: " . date('H:i:s') . "\n";
     });
+
     $intervalTimers[] = \Swoole\Timer::tick(5000, function () {
         echo "tick: " . date('H:i:s') . "\n";
     });
@@ -45,7 +46,7 @@ function clearTimer()
         \Swoole\Timer::clear($item);
         unset($timeoutTimers[$key]);
     }
-    foreach ($intervalTimers as $key =>$item) {
+    foreach ($intervalTimers as $key => $item) {
         \Swoole\Timer::clear($item);
         unset($intervalTimers[$key]);
     }
