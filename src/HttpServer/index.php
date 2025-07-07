@@ -4,7 +4,7 @@ require_once "../Base/Init.php";
 
 $http = new \Swoole\Http\Server(HOST, PORT);
 
-$http->on("start", function ($server) {
+$http->on("start", function (\Swoole\Http\Server $server) {
     echo serverStartMessageText("http");
 });
 
